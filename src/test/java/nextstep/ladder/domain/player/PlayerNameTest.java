@@ -1,4 +1,4 @@
-package nextstep.ladder.domain;
+package nextstep.ladder.domain.player;
 
 import nextstep.ladder.domain.exception.InvalidPlayerNameException;
 import nextstep.ladder.domain.exception.OutOfPlayerNameLengthException;
