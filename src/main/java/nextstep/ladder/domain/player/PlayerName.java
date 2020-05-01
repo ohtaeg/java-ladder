@@ -1,4 +1,4 @@
-package nextstep.ladder.domain;
+package nextstep.ladder.domain.player;
 
 import nextstep.ladder.domain.exception.InvalidPlayerNameException;
 import nextstep.ladder.domain.exception.OutOfPlayerNameLengthException;
@@ -6,6 +6,8 @@ import nextstep.ladder.domain.exception.OutOfPlayerNameLengthException;
 import java.util.Objects;
 
 public class PlayerName {
+    private static final int MAX_NAME_LENGTH = 5;
+
     private String name;
 
     private PlayerName(String name) {
@@ -25,7 +27,7 @@ public class PlayerName {
     }
 
     private void validNameLength(final String name) {
-        if (name.length() > 5) {
+        if (name.length() > MAX_NAME_LENGTH) {
             throw new OutOfPlayerNameLengthException(name);
         }
     }
