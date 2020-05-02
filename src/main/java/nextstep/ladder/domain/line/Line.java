@@ -1,16 +1,17 @@
 package nextstep.ladder.domain.line;
 
-import java.util.List;
+import nextstep.ladder.domain.line.strategy.LineGenerateStrategy;
+
 import java.util.stream.Stream;
 
 public class Line {
-    private final List<Stair> stairs;
+    private final Stairs stairs;
 
-    private Line(final List<Stair> stairs) {
+    private Line(final Stairs stairs) {
         this.stairs = stairs;
     }
 
-    public static Line generate(final LineGenerateStrategy lineGenerateStrategy, final int playerNameCount) {
+    public static Line valueOf(final LineGenerateStrategy lineGenerateStrategy, final int playerNameCount) {
         return new Line(lineGenerateStrategy.generate(playerNameCount));
     }
 
