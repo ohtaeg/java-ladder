@@ -20,6 +20,10 @@ public class PlayerName {
         return new PlayerName(name);
     }
 
+    public String getName() {
+        return name;
+    }
+
     private static void validName(final String name) {
         if (name == null || name.trim().isEmpty()) {
             throw new InvalidPlayerNameException(name);

@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class PlayerNames {
     private static final String SEPARATOR = "\\s*,\\s*";
@@ -21,8 +22,12 @@ public class PlayerNames {
         return new PlayerNames(toPlayerNameList(splitNames));
     }
 
-    public int size() {
+    public int count() {
         return names.size();
+    }
+
+    public Stream<PlayerName> stream() {
+        return names.stream();
     }
 
     private static String[] splitName(final String names) {
