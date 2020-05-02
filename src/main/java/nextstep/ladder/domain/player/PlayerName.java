@@ -11,22 +11,22 @@ public class PlayerName {
     private String name;
 
     private PlayerName(String name) {
-        validName(name);
-        validNameLength(name);
         this.name = name;
     }
 
     public static PlayerName valueOf(final String name) {
+        validName(name);
+        validNameLength(name);
         return new PlayerName(name);
     }
 
-    private void validName(final String name) {
+    private static void validName(final String name) {
         if (name == null || name.trim().isEmpty()) {
             throw new InvalidPlayerNameException(name);
         }
     }
 
-    private void validNameLength(final String name) {
+    private static void validNameLength(final String name) {
         if (name.length() > MAX_NAME_LENGTH) {
             throw new OutOfPlayerNameLengthException(name);
         }
