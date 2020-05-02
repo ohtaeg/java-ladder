@@ -12,6 +12,10 @@ public class InputView {
 
     private final Scanner scanner;
 
+    public InputView() {
+        this(System.in);
+    }
+
     public InputView(final InputStream inputStream) {
         scanner = new Scanner(inputStream);
     }
