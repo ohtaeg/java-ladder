@@ -15,6 +15,6 @@ class PlayerNamesTest {
 
         final PlayerNames actual = PlayerNames.ofNames(names);
 
-        assertThat(actual.size()).isEqualTo(expect);
+        assertThat(actual.count()).isEqualTo(expect);
     }
 }

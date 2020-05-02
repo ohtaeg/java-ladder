@@ -21,7 +21,7 @@ class InputViewTest {
 
         PlayerNames actual = inputView.inputPlayerNames();
 
-        assertThat(actual.size()).isEqualTo(4);
+        assertThat(actual.count()).isEqualTo(4);
     }
 
     @DisplayName("높이를 입력받는다.")
