@@ -20,10 +20,6 @@ public class Stairs {
         return CREATE_FIRST_STAIRS;
     }
 
-    public int count() {
-        return stairs.size();
-    }
-
     public Stairs addNextStair(final Stair stair) {
         List<Stair> copyStairs = new ArrayList<>();
         copyStairs.addAll(stairs);
@@ -36,6 +32,11 @@ public class Stairs {
         copyStairs.add(stair);
         return new Stairs(copyStairs);
     }
+
+    public int count() {
+        return stairs.size();
+    }
+
     public Stream<Stair> stream() {
         return stairs.stream();
     }
