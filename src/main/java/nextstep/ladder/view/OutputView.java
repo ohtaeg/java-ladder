@@ -3,6 +3,7 @@ package nextstep.ladder.view;
 import nextstep.ladder.domain.ladder.Ladder;
 import nextstep.ladder.domain.line.Line;
 import nextstep.ladder.domain.line.Stair;
+import nextstep.ladder.domain.player.PlayerName;
 import nextstep.ladder.domain.player.PlayerNames;
 
 import java.util.stream.Collectors;
@@ -19,7 +20,7 @@ public class OutputView {
         System.out.print(System.lineSeparator());
         System.out.println(RESULT_MESSAGE);
         playerNames.stream()
-                   .map(name -> formatName(name.getName()))
+                   .map(OutputView::formatName)
                    .forEach(System.out::print);
         System.out.println();
     }
@@ -36,7 +37,7 @@ public class OutputView {
                    .collect(Collectors.joining(LADDER_STRAIGHT_LINE, EMPTY_STRING, LADDER_STRAIGHT_LINE));
     }
 
-    private static String formatName(String name) {
+    private static String formatName(PlayerName name) {
         return String.format(NAME_FORMAT_EXPRESSION, name);
     }
 }
